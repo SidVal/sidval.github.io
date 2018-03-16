@@ -26,13 +26,12 @@
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
         <div id="logo"><h1>SidV Open Source</h1></div>
-<!--//
-        <h1>Twitter is built on open source software.</h1>
-        <p>Want to help? <a href="https://careers.twitter.com/">Join the Flock</a></p>
-        <p>More about <a href="https://engineering.twitter.com/">Twitter Engineering</a></p>
+        <h1>SidV</h1>
+        <p>A bunch of people creating open source software. Fork a project and get involved!</p>
+        <p>Want to help? <a href="https://github.com/SidVal/SidV/issues">Send me a message</a></p>
+        <p>More about <a href="https://sidval.github.io/SidV/">SidV</a></p>
         <p>&nbsp;</p>
-        <p><a href="https://brand.twitter.com/">Logos and other goodies</a></p>
-//-->
+        <p><a href="https://github.com/SidVal">SidV's GitHub Profile</a></p>
       </div>
 
       <div class="grid grid-3">
@@ -79,14 +78,15 @@
       var repoUrls = {
         "discourse-data-explorer": "https://github.com/SidVal/discourse-data-explorer/tree/queries",
         "docs": "https://github.com/sidval/docs",
-        "Consultoria-SAP/ABAP": "https://github.com/consultoria-sap/ABAP",
+        "csap": "https://github.com/consultoria-sap"
       };
       function repoUrl(repo) {
         return repoUrls[repo.name] || repo.html_url;
       }
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        "docs": "AmpProject.org repo =)"
+        "docs": "AmpProject.org repo =)",
+        "csap": "Consultoria-SAP's Project"
       };
       /* Global Search Result, updated only once after fetching repos from api.github.com */
       var listOfRepos = [];
