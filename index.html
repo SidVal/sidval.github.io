@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>Twitter &hearts; Open Source</title>
+    <title>SidV &hearts; Open Source</title>
     <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/grid.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
+<!--//
     <link href="//abs.twimg.com/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="mask-icon" sizes="any" href="https://abs.twimg.com/a/1468984401/img/t1/favicon.svg" color="#55acee">
+    <link rel="mask-icon" sizes="any" href="https://abs.twimg.com/a/1468984401/img/t1/favicon.svg" color="#55acee"> 
+//-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A listing of open source projects from Twitter.">
-
+    <meta name="description" content="A listing of open source projects from SidV.">
+<!--//
     <meta name="twitter:url" content="https://twitter.github.io" />
     <meta name="twitter:creator" content="@TwitterOSS" />
     <meta name="twitter:site" content="@TwitterOSS" />
@@ -19,31 +20,34 @@
     <meta name="twitter:description" content="A listing of open source projects from Twitter." />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://g.twimg.com/eng/theme/eng-home-open-source.png" />
+//-->
   </head>
   <body>
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
-        <div id="logo"><h1>Twitter Open Source</h1></div>
+        <div id="logo"><h1>SidV Open Source</h1></div>
+<!--//
         <h1>Twitter is built on open source software.</h1>
         <p>Want to help? <a href="https://careers.twitter.com/">Join the Flock</a></p>
         <p>More about <a href="https://engineering.twitter.com/">Twitter Engineering</a></p>
         <p>&nbsp;</p>
         <p><a href="https://brand.twitter.com/">Logos and other goodies</a></p>
+//-->
       </div>
 
       <div class="grid grid-3">
         <div id="statistics" class="grid-1 alpha header">
           <h1>Statistics</h1>
           <p>
-            <a href="https://github.com/twitter/repositories"><span id="num-repos"><img src="assets/spinner.gif" /></span> public repos</a>
+            <a href="https://github.com/SidVal/repositories"><span id="num-repos"><img src="assets/spinner.gif" /></span> public repos</a>
             <br>
-            <a href="https://github.com/twitter?tab=members"><span id="num-members"><img src="assets/spinner.gif" /></span> members</a>
+            <!--<a href="https://github.com/Consultoria-SAP?tab=members"><span id="num-members"><img src="assets/spinner.gif" /></span> members</a>-->
           </p>
-          <p class="email"><a href="mailto:opensource@twitter.com">opensource@twitter.com</a></p>
+          <!--<p class="email"><a href="mailto:opensource@twitter.com">opensource@twitter.com</a></p>-->
         </div>
 
         <div id="recently-updated" class="grid-2 omega header">
-          <h1>Recently updated <a href="https://github.com/twitter/repositories">View All on GitHub</a></h1>
+          <h1>Recently updated <a href="https://github.com/sidval/repositories">View All on GitHub</a></h1>
           <ol id="recently-updated-repos"></ol>
         </div>
       </div>
@@ -54,6 +58,7 @@
 
       <ol id="repos"></ol>
     </div>
+<!--//
     <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39101739-1']);
@@ -64,6 +69,7 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
     </script>
+//-->
     <script type="text/javascript" src="assets/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="assets/strftime.js"></script>
     <script type="text/javascript" src="assets/fuse.min.js"></script>
@@ -71,32 +77,16 @@
     (function ($, undefined) {
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
-        "twemoji": "https://twitter.github.io/twemoji/",
-        "finagle": "https://twitter.github.io/finagle/",
-        "hogan.js": "https://twitter.github.io/hogan.js/",
-        "heron": "https://twitter.github.io/heron/",
-        "distributedlog": "https://bookkeeper.apache.org/distributedlog/",
-        "labella.js": "https://twitter.github.io/labella.js/",
-        "pants": "https://pantsbuild.github.io/",
-        "scala_school": "https://twitter.github.io/scala_school/",
-        "finatra": "https://twitter.github.io/finatra/",
-        "twitter-server": "https://twitter.github.io/twitter-server/",
-        "twisitor": "https://twitter.github.io/twisitor/",
-        "scrooge": "https://twitter.github.io/scrooge/",
-        "util": "https://twitter.github.io/util/",
-        "commons": "https://twitter.github.io/commons/",
-        "typeahead.js": "https://twitter.github.io/typeahead.js/",
-        "plumage.js": "https://twitter.github.io/plumage.js/",
-        "recess": "https://twitter.github.io/recess/",
-        "iago": "https://twitter.github.io/iago/",
-        "ospriet": "https://twitter.github.io/ospriet/"
+        "discourse-data-explorer": "https://github.com/SidVal/discourse-data-explorer/tree/queries",
+        "docs": "https://github.com/sidval/docs",
+        "Consultoria-SAP/ABAP": "https://github.com/consultoria-sap/ABAP",
       };
       function repoUrl(repo) {
         return repoUrls[repo.name] || repo.html_url;
       }
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        "naggati2": "A protocol builder for Netty using Scala 2.8"
+        "docs": "AmpProject.org repo =)"
       };
       /* Global Search Result, updated only once after fetching repos from api.github.com */
       var listOfRepos = [];
@@ -128,7 +118,7 @@
       function addRepos(repos, page) {
         repos = repos || [];
         page = page || 1;
-        var uri = "https://api.github.com/orgs/twitter/repos?callback=?"
+        var uri = "https://api.github.com/users/sidval/repos?callback=?"
                 + "&per_page=100"
                 + "&page="+page;
         $.getJSON(uri, function (result) {
@@ -178,7 +168,7 @@
       function getNumMembers(page, numMembers) {
         var page = page || 1;
         var numMembers = numMembers || 0;
-        var membersUri = "https://api.github.com/orgs/twitter/members?callback=?"
+        var membersUri = "https://api.github.com/orgs/consultoria-sap/members?callback=?"
           + "&per_page=100"
           + "&page="+page;
         $.getJSON(membersUri, function (result) {
@@ -259,7 +249,7 @@
         }
         return opacity;
       }
-      function makeLarry(sizeName, speed) {
+      /* function makeLarry(sizeName, speed) {
         var size = sizeDimensions[sizeName];
         var top = Math.floor((flyzone().height() - size) * Math.random());
         var $img = $("<img>")
@@ -281,6 +271,7 @@
         });
         return $img;
       }
+      */
       function makeRandomLarry() {
         var size = randomItem(sizes);
         var speed = Math.floor(Math.random() * 20000) + 15000;
