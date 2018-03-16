@@ -1,6 +1,7 @@
 (function ($, undefined) {
 
-    var orgName = 'SidVal';
+    var userName = 'SidVal';
+    var orgName = 'Consultoria-SAP';
 
     // Return the repo url
     function getRepoUrl(repo) {
@@ -36,7 +37,7 @@
         $item.appendTo('#repos');
     }
 
-    $.getJSON('https://api.github.com/orgs/' + orgName + '/repos?callback=?', function (result) {
+    $.getJSON('https://api.github.com/users/' + userName + '/repos?callback=?', function (result) {
         var repos = result.data;
         $(function () {
             $('#num-repos').text(repos.length);
