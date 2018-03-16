@@ -1,6 +1,6 @@
 (function ($, undefined) {
 
-    var orgName = 'h5bp';
+    var orgName = 'SidVal';
 
     // Return the repo url
     function getRepoUrl(repo) {
