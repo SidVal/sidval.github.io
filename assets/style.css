@@ -207,9 +207,9 @@ li.repo h3 {
 }
 
 .repo.css:after {border-right-color: #6fd277;}
-.repo-html:after {border-right-color:#abb50f;}
-.repo-abap:after {border-right-color:#a90909;}
-.repo-c#:after {border-right-color:#b5f3f3;}
+.repo.html:after {border-right-color:#abb50f;}
+.repo.abap:after {border-right-color:#a90909;}
+.repo.c#:after {border-right-color:#b5f3f3;}
 
 @keyframes small-swing { 0% { margin-top: 0 } 50% { margin-top: -10px } 100% { margin-top: 0 } }
 @-moz-keyframes small-swing { 0% { margin-top: 0 } 50% { margin-top: -10px } 100% { margin-top: 0 } }
