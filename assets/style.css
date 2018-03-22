@@ -195,7 +195,7 @@ li.repo h3 {
 }
 
 .repo.ruby:after {
-  border-right-color: #cc1100;
+  border-right-color: #4f6e9c;
 }
 
 .repo.java:after {
@@ -203,8 +203,13 @@ li.repo h3 {
 }
 
 .repo.python:after {
-  border-right-color: #6aad2d;
+  border-right-color: #26847f;
 }
+
+.repo.css:after {border-right-color: #6fd277;}
+.repo-html:after {border-right-color:#abb50f;}
+.repo-abap:after {border-right-color:#a90909;}
+.repo-c#:after {border-right-color:#b5f3f3;}
 
 @keyframes small-swing { 0% { margin-top: 0 } 50% { margin-top: -10px } 100% { margin-top: 0 } }
 @-moz-keyframes small-swing { 0% { margin-top: 0 } 50% { margin-top: -10px } 100% { margin-top: 0 } }
