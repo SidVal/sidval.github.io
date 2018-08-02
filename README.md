@@ -1,2 +1,3 @@
 # sidval.github.io
-Testing home page
+
+Si surgen ideas, usar: https://github.com/SidVal/SidV/issues
