@@ -77,21 +77,27 @@
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
         "discourse-data-explorer": "https://github.com/SidVal/discourse-data-explorer/tree/queries",
-        "docs": "https://github.com/sidval/docs",
+        "docs": "https://www.ampproject.org/es/",
         "SidV": "https://sidval.github.io/SidV",
         "feedly-no-img": "https://sidval.github.io/feedly-no-img/",
         "csap": "https://github.com/consultoria-sap",
         "jekyll": "https://sidval.github.io/jekyll/",
-        "dev.web": "https://github.com/SidVal/dev.web/wiki"
+        "rlopezsrl": "https://www.srlopezsrl.com",
+        "kill-metabar-maximized": "https://sidval.github.io/kill-metabar-maximized/",
+        "hide-ads": "https://sidval.github.io/hide-ads/",
+        "dev.web": "https://sidval.github.io/dev.web/"
       };
       function repoUrl(repo) {
         return repoUrls[repo.name] || repo.html_url;
       }
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        "docs": "AmpProject.org repo =)",
+        "docs": "Mantenimiento del repo https://www.ampproject.org/es/ en español",
         "csap": "Consultoria-SAP's Project",
-        "jekyll": "Just-Share-It's Project"
+        "rlopezsrl": "Cliente Web: Rafael López S.R.L."
+        "jekyll": "Just-Share-It's Project",
+        "SidV": "Página de Proyectos e Ideas personales",
+        "dev.web": "Documentación: Desarrollador Web"
       };
       /* Global Search Result, updated only once after fetching repos from api.github.com */
       var listOfRepos = [];
