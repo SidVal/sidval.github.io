@@ -1,3 +1,3 @@
 # sidval.github.io
 
-Si surgen ideas, usar: https://github.com/SidVal/SidV/issues
+Este home queda redireccionando al repo de [Conocimientos](https://sidval.github.io/conocimientos/#/)
