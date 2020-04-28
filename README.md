@@ -1,3 +1,3 @@
 # sidval.github.io
 
-Este home queda redireccionando al repo de [Conocimientos](https://sidval.github.io/conocimientos/#/)
+Este home queda redireccionando al repo de [Dev.Web](https://sidval.github.io/dev.web/)
