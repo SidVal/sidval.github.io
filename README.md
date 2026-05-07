@@ -362,4 +362,6 @@ Pendiente de definir.
 
 ## Autor
 
-Proyecto creado para organizar y visualizar repositorios públicos de GitHub desde una única interfaz web.
+_¿Quién va a ser?_ ;-)
+
+> Ref: https://github.com/SidVal/SidV/issues/150
