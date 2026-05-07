@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis proyectos públicos en GitHub</title>
+  <meta name="description" content="Dashboard público para explorar repositorios de GitHub, demos y proyectos personales.">
+  <meta name='impact-site-verification' value='c792792e-d2ad-4931-ba27-3af3b3535413'>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-layout">
+      <div>
+        <p class="eyebrow">GitHub Projects Dashboard</p>
+        <h1>Mis proyectos públicos en GitHub</h1>
+        <p class="lead">
+          Un índice visual para explorar repositorios, demos públicas y proyectos en desarrollo desde un solo lugar.
+        </p>
+      </div>
+
+      <a class="profile-link" href="https://github.com/sidval" target="_blank" rel="noopener noreferrer">
+        Ver perfil en GitHub
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="summary-grid" aria-label="Resumen de repositorios">
+      <article class="summary-card">
+        <span class="summary-label">Repositorios</span>
+        <strong id="totalRepos">0</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label">Con web pública</span>
+        <strong id="withWeb">0</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label">Sin web pública</span>
+        <strong id="withoutWeb">0</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label">Última actualización</span>
+        <strong id="latestUpdate">-</strong>
+      </article>
+    </section>
+
+    <section class="toolbar" aria-label="Controles de búsqueda y filtrado">
+      <div class="field field-search">
+        <label for="searchInput">Buscar</label>
+        <input id="searchInput" type="search" placeholder="Nombre, descripción, lenguaje o topic">
+      </div>
+
+      <div class="field">
+        <label for="webFilter">Web pública</label>
+        <select id="webFilter">
+          <option value="all">Todos</option>
+          <option value="with-web">Con web</option>
+          <option value="without-web">Sin web</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="languageFilter">Lenguaje</label>
+        <select id="languageFilter">
+          <option value="all">Todos</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="sortSelect">Ordenar</label>
+        <select id="sortSelect">
+          <option value="updated-desc">Actualizados recientemente</option>
+          <option value="created-desc">Creados recientemente</option>
+          <option value="name-asc">Nombre A-Z</option>
+          <option value="stars-desc">Más estrellas</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="results-heading">
+      <h2>Proyectos</h2>
+      <p id="resultsCount">Cargando repositorios...</p>
+    </section>
+
+    <section id="repoGrid" class="repo-grid" aria-live="polite"></section>
+
+    <section id="emptyState" class="empty-state hidden">
+      <h2>No se encontraron repositorios</h2>
+      <p>Probá cambiar la búsqueda o los filtros activos.</p>
+    </section>
+
+    <section id="errorState" class="empty-state hidden">
+      <h2>No se pudo cargar el JSON</h2>
+      <p>Revisá que exista <code>data/repos.json</code> y que estés usando un servidor local.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Datos cargados desde <code>data/repos.json</code>. Fase 1 del dashboard.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

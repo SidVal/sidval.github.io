@@ -1,0 +1,78 @@
+[
+  {
+    "name": "portfolio-web",
+    "description": "Portfolio personal publicado con GitHub Pages.",
+    "html_url": "https://github.com/sidval/portfolio-web",
+    "homepage": "https://sidval.github.io/portfolio-web/",
+    "language": "HTML",
+    "topics": [
+      "portfolio",
+      "github-pages",
+      "frontend"
+    ],
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "created_at": "2024-01-12T00:00:00Z",
+    "updated_at": "2026-04-20T00:00:00Z",
+    "pushed_at": "2026-04-20T00:00:00Z",
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "js-tools",
+    "description": "Colección de utilidades pequeñas en JavaScript.",
+    "html_url": "https://github.com/sidval/js-tools",
+    "homepage": "",
+    "language": "JavaScript",
+    "topics": [
+      "javascript",
+      "tools",
+      "utilities"
+    ],
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "created_at": "2023-08-04T00:00:00Z",
+    "updated_at": "2026-03-15T00:00:00Z",
+    "pushed_at": "2026-03-15T00:00:00Z",
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "css-experiments",
+    "description": "Experimentos visuales y componentes hechos con CSS puro.",
+    "html_url": "https://github.com/sidval/css-experiments",
+    "homepage": "https://sidval.github.io/css-experiments/",
+    "language": "CSS",
+    "topics": [
+      "css",
+      "experiments",
+      "frontend"
+    ],
+    "stargazers_count": 7,
+    "forks_count": 2,
+    "created_at": "2022-11-02T00:00:00Z",
+    "updated_at": "2026-01-24T00:00:00Z",
+    "pushed_at": "2026-01-24T00:00:00Z",
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "python-scripts",
+    "description": "Scripts personales para automatizaciones y procesamiento de datos.",
+    "html_url": "https://github.com/sidval/python-scripts",
+    "homepage": "",
+    "language": "Python",
+    "topics": [
+      "python",
+      "automation",
+      "scripts"
+    ],
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "created_at": "2021-05-18T00:00:00Z",
+    "updated_at": "2025-12-01T00:00:00Z",
+    "pushed_at": "2025-12-01T00:00:00Z",
+    "archived": false,
+    "fork": false
+  }
+]
