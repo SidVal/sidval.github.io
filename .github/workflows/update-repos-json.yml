@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   update-repos-json:
-    name: Fetch GitHub repositories
+    name: Fetch public GitHub repositories
     runs-on: ubuntu-latest
 
     steps:
@@ -23,10 +23,9 @@ jobs:
           node-version: 22
 
       - name: Generate data/repos.json
-        run: node processors/fetch-repos.js
+        run: node p/fetch-repos.js
         env:
           GITHUB_USERNAME: sidval
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit generated repos.json
         run: |
