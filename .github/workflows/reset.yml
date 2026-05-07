@@ -1,0 +1,56 @@
+name: Reset repository
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Escribí RESET para confirmar el borrado'
+        required: true
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  reset:
+    name: Delete repository files except README.md and favicon.ico
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate confirmation
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "RESET" ]; then
+            echo "Confirmation failed. You must type RESET."
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete everything except README.md, favicon.ico and .git
+        run: |
+          find . -mindepth 1 \
+            ! -path './.git' \
+            ! -path './.git/*' \
+            ! -path './README.md' \
+            ! -path './favicon.ico' \
+            -exec rm -rf {} +
+
+      - name: Recreate workflows directory
+        run: |
+          mkdir -p .github/workflows
+
+      - name: Commit reset
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Reset repository contents"
+          git push
