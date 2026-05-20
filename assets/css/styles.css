@@ -440,7 +440,14 @@ code {
 }
 
 @media (max-width: 920px) {
-  .header-layout,
+  .header-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-highlight {
+    max-width: 420px;
+  }
+
   .toolbar,
   .summary-grid,
   .repo-grid {
@@ -450,15 +457,11 @@ code {
   .field-search {
     grid-column: 1 / -1;
   }
-
-  .profile-link {
-    justify-self: start;
-  }
 }
 
 @media (max-width: 640px) {
   .site-header {
-    padding-top: 42px;
+    padding-top: 38px;
   }
 
   .header-layout,
@@ -466,6 +469,23 @@ code {
   .summary-grid,
   .repo-grid {
     grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 13vw, 3.3rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .button,
+  .hero-actions .profile-link {
+    width: 100%;
   }
 
   .toolbar {
