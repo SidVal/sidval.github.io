@@ -9,6 +9,7 @@ const state = {
 const elements = {
   totalRepos: document.querySelector("#totalRepos"),
   withWeb: document.querySelector("#withWeb"),
+  heroWithWeb: document.querySelector("#heroWithWeb"),
   withoutWeb: document.querySelector("#withoutWeb"),
   latestUpdate: document.querySelector("#latestUpdate"),
   searchInput: document.querySelector("#searchInput"),
@@ -164,12 +165,17 @@ function updateSummary(repos) {
 
   elements.totalRepos.textContent = total;
   elements.withWeb.textContent = withWeb;
+
+  if (elements.heroWithWeb) {
+    elements.heroWithWeb.textContent = withWeb;
+  }
+
   elements.withoutWeb.textContent = withoutWeb;
   elements.latestUpdate.textContent = latest ? formatDate(latest) : "-";
 }
 
 function updateResultsCount(visible, total) {
-  elements.resultsCount.textContent = `${visible} de ${total} repositorios visibles`;
+  elements.resultsCount.textContent = `${visible} de ${total} proyectos visibles`;
 }
 
 function renderRepos(repos) {
@@ -201,7 +207,7 @@ function createRepoCard(repo) {
         </a>
       </h3>
       <span class="badge ${publicWeb ? "badge-web" : "badge-no-web"}">
-        ${publicWeb ? "Con web" : "Sin web"}
+        ${publicWeb ? "Demo pública" : "Repositorio"}
       </span>
     </div>
 
@@ -222,12 +228,12 @@ function createRepoCard(repo) {
 
     <div class="card-actions">
       <a class="button button-secondary" href="${escapeAttribute(repo.html_url)}" target="_blank" rel="noopener noreferrer">
-        Repositorio
+        Ver repo
       </a>
-
+      
       ${publicWeb ? `
         <a class="button button-primary" href="${escapeAttribute(repo.homepage)}" target="_blank" rel="noopener noreferrer">
-          Ver web
+          Abrir demo
         </a>
       ` : ""}
     </div>
