@@ -11,42 +11,56 @@
 <body>
   <header class="site-header">
     <div class="container header-layout">
-      <div>
-        <p class="eyebrow">GitHub Projects Dashboard</p>
-        <h1>Mis proyectos públicos en GitHub</h1>
+      <div class="hero-copy">
+        <p class="eyebrow">Portfolio técnico</p>
+  
+        <h1>Explora mis proyectos, demos y experimentos públicos</h1>
+  
         <p class="lead">
-          Un índice visual para explorar repositorios, demos públicas y proyectos en desarrollo desde un solo lugar.
+          Un mapa visual de repositorios, herramientas web, pruebas de frontend y proyectos en desarrollo desde un solo lugar.
         </p>
+  
+        <div class="hero-actions">
+          <a class="button button-primary hero-primary" href="#repoGrid">
+            Explorar proyectos
+          </a>
+  
+          <a class="profile-link" href="https://github.com/sidval" target="_blank" rel="noopener noreferrer">
+            Ver GitHub
+          </a>
+        </div>
       </div>
-
-      <a class="profile-link" href="https://github.com/sidval" target="_blank" rel="noopener noreferrer">
-        Ver perfil en GitHub
-      </a>
+  
+      <aside class="hero-highlight" aria-label="Resumen destacado">
+        <span class="hero-highlight-label">Demos públicas</span>
+        <strong id="heroWithWeb">0</strong>
+        <p>proyectos disponibles para abrir y probar</p>
+      </aside>
     </div>
   </header>
 
   <main class="container">
-    <section class="summary-grid" aria-label="Resumen de repositorios">
-      <article class="summary-card">
-        <span class="summary-label">Repositorios</span>
-        <strong id="totalRepos">0</strong>
-      </article>
-
-      <article class="summary-card">
-        <span class="summary-label">Con web pública</span>
-        <strong id="withWeb">0</strong>
-      </article>
-
-      <article class="summary-card">
-        <span class="summary-label">Sin web pública</span>
-        <strong id="withoutWeb">0</strong>
-      </article>
-
-      <article class="summary-card">
-        <span class="summary-label">Última actualización</span>
-        <strong id="latestUpdate">-</strong>
-      </article>
-    </section>
+  <section class="summary-grid" aria-label="Resumen de repositorios">
+    <article class="summary-card">
+    <span class="summary-label">Total</span>
+    <strong id="totalRepos">0</strong>
+    </article>
+    
+    <article class="summary-card summary-card-featured">
+    <span class="summary-label">Demos públicas</span>
+    <strong id="withWeb">0</strong>
+    </article>
+    
+    <article class="summary-card">
+    <span class="summary-label">En repositorio</span>
+    <strong id="withoutWeb">0</strong>
+    </article>
+    
+    <article class="summary-card">
+    <span class="summary-label">Actualizado</span>
+    <strong id="latestUpdate">-</strong>
+    </article>
+  </section>
 
     <section class="toolbar" aria-label="Controles de búsqueda y filtrado">
       <div class="field field-search">
