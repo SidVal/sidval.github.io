@@ -457,6 +457,18 @@ code {
   background: var(--surface-strong);
 }
 
+.repo-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.badge-pinned {
+  background: #fff3cd;
+  color: #7a5200;
+}
+
 @media (max-width: 920px) {
   .header-layout {
     grid-template-columns: 1fr;
