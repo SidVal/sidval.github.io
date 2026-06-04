@@ -7,7 +7,7 @@ const pinnedRepos = [
 const hiddenRepos = [
   "www",
   "rlopezsrl",
-  "predeterminar"
+  "predeterminar",
   "csap"
 ];
 
