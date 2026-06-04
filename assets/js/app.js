@@ -1,3 +1,16 @@
+const pinnedRepos = [
+  "sidval.github.io",
+  "olab",
+  "hide-ads"
+];
+
+const hiddenRepos = [
+  "www",
+  "rlopezsrl",
+  "predeterminar"
+  "csap"
+];
+
 const state = {
   repos: [],
   search: "",
@@ -83,18 +96,25 @@ function populateLanguageFilter(repos) {
 }
 
 function render() {
+  const visibleRepos = state.repos.filter(isVisibleRepo);
   const filteredRepos = getFilteredRepos();
-  updateSummary(state.repos);
-  updateResultsCount(filteredRepos.length, state.repos.length);
+
+  updateSummary(visibleRepos);
+  updateResultsCount(filteredRepos.length, visibleRepos.length);
   renderRepos(filteredRepos);
 }
 
 function getFilteredRepos() {
   return state.repos
+    .filter(isVisibleRepo)
     .filter(matchesSearch)
     .filter(matchesWebFilter)
     .filter(matchesLanguageFilter)
     .sort(sortRepos);
+}
+
+function isVisibleRepo(repo) {
+  return !hiddenRepos.includes(repo.name);
 }
 
 function matchesSearch(repo) {
@@ -138,6 +158,12 @@ function matchesLanguageFilter(repo) {
 }
 
 function sortRepos(a, b) {
+  const pinnedComparison = comparePinnedRepos(a, b);
+
+  if (pinnedComparison !== 0) {
+    return pinnedComparison;
+  }
+
   if (state.sort === "name-asc") {
     return a.name.localeCompare(b.name);
   }
@@ -151,6 +177,28 @@ function sortRepos(a, b) {
   }
 
   return dateValue(b.updated_at) - dateValue(a.updated_at);
+}
+
+function comparePinnedRepos(a, b) {
+  const indexA = pinnedRepos.indexOf(a.name);
+  const indexB = pinnedRepos.indexOf(b.name);
+
+  const aIsPinned = indexA !== -1;
+  const bIsPinned = indexB !== -1;
+
+  if (aIsPinned && bIsPinned) {
+    return indexA - indexB;
+  }
+
+  if (aIsPinned) {
+    return -1;
+  }
+
+  if (bIsPinned) {
+    return 1;
+  }
+
+  return 0;
 }
 
 function updateSummary(repos) {
@@ -198,6 +246,7 @@ function createRepoCard(repo) {
   const publicWeb = hasPublicWeb(repo);
   const description = repo.description || "Sin descripción todavía.";
   const topics = Array.isArray(repo.topics) ? repo.topics : [];
+  const isPinned = pinnedRepos.includes(repo.name);
 
   card.innerHTML = `
     <div class="repo-card-header">
@@ -206,9 +255,14 @@ function createRepoCard(repo) {
           ${escapeHTML(repo.name)}
         </a>
       </h3>
-      <span class="badge ${publicWeb ? "badge-web" : "badge-no-web"}">
-        ${publicWeb ? "Demo pública" : "Repositorio"}
-      </span>
+
+      <div class="repo-badges">
+        ${isPinned ? `<span class="badge badge-pinned">Fijado</span>` : ""}
+
+        <span class="badge ${publicWeb ? "badge-web" : "badge-no-web"}">
+          ${publicWeb ? "Demo pública" : "Repositorio"}
+        </span>
+      </div>
     </div>
 
     <p class="description">${escapeHTML(description)}</p>
