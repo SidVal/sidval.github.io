@@ -198,6 +198,7 @@ function createRepoCard(repo) {
   const publicWeb = hasPublicWeb(repo);
   const description = repo.description || "Sin descripción todavía.";
   const topics = Array.isArray(repo.topics) ? repo.topics : [];
+  const isPinned = pinnedRepos.includes(repo.name);
 
   card.innerHTML = `
     <div class="repo-card-header">
@@ -206,9 +207,14 @@ function createRepoCard(repo) {
           ${escapeHTML(repo.name)}
         </a>
       </h3>
-      <span class="badge ${publicWeb ? "badge-web" : "badge-no-web"}">
-        ${publicWeb ? "Demo pública" : "Repositorio"}
-      </span>
+
+      <div class="repo-badges">
+        ${isPinned ? `<span class="badge badge-pinned">Fijado</span>` : ""}
+
+        <span class="badge ${publicWeb ? "badge-web" : "badge-no-web"}">
+          ${publicWeb ? "Demo pública" : "Repositorio"}
+        </span>
+      </div>
     </div>
 
     <p class="description">${escapeHTML(description)}</p>
